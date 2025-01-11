@@ -1,0 +1,193 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* În index.css sau App.css */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+}
+
+/* Stiluri pentru mesajele din chat */
+.chat-messages {
+  background-color: #f0f0f0; /* Fundal clar pentru întreaga zonă de mesaje */
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 100%;
+  overflow-y: auto; /* Permite derularea */
+}
+
+/* Stiluri pentru bulă (doar pentru ceilalți utilizatori) */
+.message-bubble {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 5px;
+  max-width: 80%; /* Mesajele vor avea o lățime maximă de 80% din container */
+  flex-wrap: wrap; /* Permite rânduri multiple dacă textul este prea lung */
+}
+
+/* Stiluri pentru bula cu inițiala utilizatorului (doar pentru ceilalți utilizatori) */
+.message.received .initial {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Stiluri pentru textul mesajului */
+.message-text {
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  display: inline-block;
+  width: auto; /* Lățime automată în funcție de text */
+  max-width: 75%; /* Lățimea maximă a mesajului */
+}
+
+/* Stiluri pentru mesajele trimise (la dreapta) */
+.message.sent .message-text {
+  background-color: #dcf8c6; /* Verde pentru mesajele trimise */
+  align-self: flex-end; /* Aliniere la dreapta */
+  margin-left: auto; /* Asigură că mesajul este aliniat la dreapta */
+}
+
+/* Stiluri pentru mesajele primite (la stânga) */
+.message.received .message-text {
+  background-color: #ffffff; /* Alb pentru mesajele primite */
+  align-self: flex-start; /* Aliniere la stânga */
+  margin-right: auto; /* Asigură că mesajul este aliniat la stânga */
+}
+
+/* Stiluri suplimentare pentru mesajele trimise */
+.message.sent {
+  display: flex;
+  justify-content: flex-end; /* Aliniere generală la dreapta pentru mesajele trimise */
+}
+
+.message.received {
+  display: flex;
+  justify-content: flex-start; /* Aliniere generală la stânga pentru mesajele primite */
+}
+
+/* Stiluri pentru numele utilizatorului */
+.message-text .sender {
+  font-size: 14px;
+  font-weight: 500; /* Font subțire pentru numele utilizatorului */
+  color: rgba(0, 0, 0, 0.5); /* Transparent, ușor gri */
+  margin-bottom: 5px;
+}
+
+.dropdown-toggle::after {
+  display:none;
+}
+
+.chat-sidebar {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.room-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.list-group-item h5 {
+  margin-bottom: 0;
+}
+
+.list-group-item small {
+  display: block;
+  color: #6c757d;
+}
+
+.badge {
+  font-size: 0.75rem;
+  margin-left: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Întunecare semitransparentă */
+  z-index: 999; /* Asigură-te că overlay-ul apare deasupra conținutului */
+}
+
+.chat-sidebar .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-room-btn {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.add-room-btn i {
+  font-size: 1.2rem;
+}
+
